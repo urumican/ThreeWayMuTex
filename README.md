@@ -1,4 +1,4 @@
-TreeWayMuTex
+ThreeWayMuTex
 ============
 
 Three kinds of threads share access to a singly-linked list: 

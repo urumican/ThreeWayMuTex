@@ -9,4 +9,3 @@ Inserters add new items to the end of the list; insertions must be mutually excl
 
 Finally, deleters remove items from anywhere in the list. At most one deleter process can access the list at a time, and deletion must also be mutually exclusive with searches and insertions. 
 
-Write C code with pthreads for searchers, inserters and deleters that enforces this kind of three-way categorical mutual exclusion.

@@ -14,30 +14,24 @@
  
 #define N 3
 #define NS 5
-#define right_ID ((ID == N - 1) ? 0 : ID + 1)
-#define left_ID ((ID == 0) ? N - 1 : ID - 1)
  
 typedef enum{ INSERT, SEARCH, DELETE } checker_t;
 typedef enum{ ON, OFF } state;
-//sem_t insert_mutax;                  /* MuTax for inserter */
-//sem_t synchro[5];                    /* The semaphore for each philosophers.*/
+
 pthread_mutex_t muTex_search;
 pthread_mutex_t muTex_delete;
 pthread_mutex_t muTex_insert;
-sem_t sem_search;
-sem_t sem_delete;
-sem_t sem_insert;
+
 state state_delete = OFF;
 state state_insert = OFF;
 state state_search = OFF;
-//phi_state action[N];				 /* The current action of those five philosophers.*/
+
 int delete_ID[N] = { 0, 1, 2 }; 
 int insert_ID[N] = { 0, 1, 2 }; 
 int search_ID[NS]; 
-//int forks[N] = { 1, 1, 1, 1, 1 };
+
 int search_count = 0;
-int insert_count = 0;
-int delete_count = 0;
+
  
 unsigned int fib(unsigned int n)
 {
